@@ -1,0 +1,76 @@
+/* I used the same gray as from the explore page instead of light gray
+from the instructions for consistency/accuracy */
+
+/* Requirement A */
+.wd-header-container {
+    padding: 0;
+}
+.wd-page-title {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Requirement B - avatar image */
+.wd-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 12px;
+}
+
+/* Requirement C - post author * handle */
+.wd-post-content {
+    float: left;
+    width: 506px;
+}
+.wd-author-name {
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+.wd-author-handle {
+    color: rgb(110, 118, 125);
+    font-weight: normal;
+}
+
+/* Requirement D - main content*/
+.wd-post-body {
+    color: white;
+    font-size: 15px;
+}
+
+/* Requirements E & F - embedded content */
+.wd-embedded-link {
+    border: 1px solid rgb(47, 51, 54);
+    border-radius: 10px;
+    margin-top: 12px;
+}
+.wd-body-img {
+    width: 506px;
+    height: 264px;
+    border-radius: 10px 10px 0 0;
+}
+.wd-embedded-body-text {
+    padding: 12px;
+}
+
+/* Requirement G - post interaction icons */
+.wd-icon-pair {
+    color: rgb(110, 118, 125);
+    text-decoration: none;
+}
+#wd-heart-icon-pair {
+    color: crimson;
+}
+.wd-inter-text {
+    font-size: 15px;
+    margin-left: 12px;
+}
+.wd-inter-icons {
+    margin-top: 12px;
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+}

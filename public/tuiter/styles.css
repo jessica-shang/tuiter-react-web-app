@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    font-family: Arial, serif;
+}
+
+/* Reducing space between paragraphs/headers */
+p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+/* Make sure there's no extra space at the end of body */
+body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Adding borders around sections */
+.wd-borders {
+    border-bottom: 1px solid rgb(47, 51, 54);
+    border-left: 1px solid rgb(47, 51, 54);
+    border-right: 1px solid rgb(47, 51, 54);
+    padding-left: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    overflow: hidden
+}
+
+/* Gray subtext (header & footer text on posts) */
+.wd-subtext {
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+}
+.wd-post-author {
+    color: white;
+}
+
+.wd-float-done {
+    clear: both;
+}
