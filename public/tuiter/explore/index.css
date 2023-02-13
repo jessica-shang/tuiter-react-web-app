@@ -1,66 +1,16 @@
-/* Requirement A */
-#search-field {
-    background-color: rgb(47, 51, 54);
-    color: white;
-    border-radius: 12.5px;
-    width: 80%;
-    height: 25px;
-    margin-bottom: 10px;
-    border: none;
-}
-#settings-icon {
-    float: right;
-    margin-right: 12px;
-    color: rgb(29,161,242);
+#wd-magnifying-glass {
+    padding-left: 10px;
 }
 
-/* Requirement B */
-.wd-navigation {
-    padding-bottom: 16px;
-}
-.wd-header-links {
-    color: rgb(110, 118, 125);
-    font-size: 15px;
-    padding: 16px;
-    text-decoration: none;
-}
-.wd-highlighted-links {
-    padding-right: 16px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    color: rgb(29,161,242);
-    text-decoration: none;
-}
-.wd-highlighted-border {
-    padding-bottom: 14px;
-    border-bottom: 3px solid rgb(29,161,242);
+#wd-img-caption {
+    bottom: 5px;
 }
 
-/* Post Requirements */
-.wd-post-subtext {
-    font-size: 13px;
-    color: rgb(110, 118, 125);
-    font-weight: normal;
-}
-.wd-post-author {
-    color: white;
-    font-weight: bold;
-}
-.wd-post-title {
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-}
-.wd-post-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    float: right;
-    margin-right: 16px;
+.wd-pfp {
+    height: 50px;
+    width: 50px;
 }
 
-.wd-left-post {
-    float:left;
+.wd-follow-btn {
+    right: 0;
 }
-
-
