@@ -11,6 +11,8 @@ function App() {
           <Routes>
             <Route index
                    element={<Labs/>}/>
+            <Route path="/*"
+                   element={<Labs/>}/>
             <Route path="/hello"
                    element={<HelloWorld/>}/>
             <Route path="/tuiter"
