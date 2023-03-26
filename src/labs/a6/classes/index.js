@@ -13,5 +13,5 @@ function Classes() {
           Dangerous background</div>
       </div>
   )
-};
+}
 export default Classes;
