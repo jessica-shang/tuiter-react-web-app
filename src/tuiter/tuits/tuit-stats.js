@@ -48,7 +48,7 @@ const TuitStats = ({tuit}) => {
           <span onClick={updateDislikesHandler}>
             {tuit.disliked && <i className="bi bi-hand-thumbs-down-fill"></i>}
             {!tuit.disliked && <i className="bi bi-hand-thumbs-down"></i>}
-            <span className="m-2">{tuit.likes}</span>
+            <span className="m-2">{tuit.dislikes}</span>
           </span>
         </div>
 
