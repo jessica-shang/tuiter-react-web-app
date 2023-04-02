@@ -10,39 +10,31 @@ const TuitStats = ({tuit}) => {
   }
 
   return (
-      <div className="d-flex justify-content-between">
-
-        <div>
-          <i className="bi bi-chat"></i>
-          <span className="m-2">{tuit.replies}</span>
+      <div className="row d-flex justify-content-center">
+        <div className="col">
+          <i className="bi bi-chat"/> {tuit.replies}
         </div>
-
-        <div>
-          <i className="bi bi-arrow-repeat"></i>
-          <span className="m-2">{tuit.retuits}</span>
+        <div className="col">
+          <i className="bi bi-arrow-repeat"/> {tuit.retuits}
         </div>
-
-        <div>
+        <div className="col">
           <i onClick={() => dispatch(updateTuitThunk({
                                                        ...tuit,
                                                        likes: tuit.likes + 1
-                                                     }))}
-             className="bi bi-heart-fill me-2 text-danger"/>
+                                                     }))} className="bi bi-heart-fill me-2 text-danger"/>
           <span> {tuit.likes}</span>
         </div>
-
-        <div>
+        <div className="col">
           <i onClick={() => dispatch(updateTuitThunk({
                                                        ...tuit,
                                                        dislikes: tuit.dislikes + 1
                                                      }))} className="bi bi-hand-thumbs-down-fill me-2"/>
           <span> {tuit.dislikes}</span>
         </div>
-
-        <div>
-          <i className="bi bi-share"></i>
+        <div className="col">
+          <i className="bi bi-share"/>
         </div>
       </div>
-  )
-}
+  );
+};
 export default TuitStats
