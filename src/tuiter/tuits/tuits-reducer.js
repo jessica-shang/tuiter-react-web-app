@@ -54,7 +54,16 @@ const tuitsSlice = createSlice({
                                          state.loading = false
                                          state.tuits.push(payload)
                                        },
-
+                                   [updateTuitThunk.fulfilled]:
+                                       (state, { payload }) => {
+                                         state.loading = false
+                                         const tuitNdx = state.tuits
+                                             .findIndex((t) => t._id === payload._id)
+                                         state.tuits[tuitNdx] = {
+                                           ...state.tuits[tuitNdx],
+                                           ...payload
+                                         }
+                                       }
                                  },
 
                                  reducers: { // OLD FROM LAST A7
