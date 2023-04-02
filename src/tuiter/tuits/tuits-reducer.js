@@ -1,5 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import tuits from './tuits.json';
+// import tuits from './tuits.json';
+import {createTuitThunk, deleteTuitThunk, findTuitsThunk}
+  from "../../services/tuits-thunks";
+
+const initialState = { // initial state has no tuits
+  tuits: [],
+  loading: false // loading flag to display spinner
+}
 
 const currentUser = {
   "userName": "NASA",
@@ -19,8 +26,38 @@ const templateTuit = {
 
 const tuitsSlice = createSlice({
                                  name: 'tuits',
-                                 initialState: tuits,
-                                 reducers: {
+                                 initialState,
+                                 extraReducers: { // async reducers
+                                   [findTuitsThunk.pending]: // if request is not yet fulfilled
+                                       (state) => {
+                                         state.loading = true // set loading true to display spinner
+                                         state.tuits = [] // tuits are still empty
+                                       },
+                                   [findTuitsThunk.fulfilled]: // when we get response, request is fulfilled
+                                       (state, { payload }) => { // extra/destruct payload from action object
+                                         state.loading = false // turn off loading flag
+                                         state.tuits = payload // payload has tuits from server & update redux state
+                                       },
+                                   [findTuitsThunk.rejected]: // respond with error if request times out
+                                       (state, action) => {
+                                         state.loading = false // reset loading flag
+                                         state.error = action.error // report error
+                                       },
+                                   [deleteTuitThunk.fulfilled] :
+                                       (state, { payload }) => {
+                                         state.loading = false
+                                         state.tuits = state.tuits
+                                             .filter(t => t._id !== payload)
+                                       },
+                                   [createTuitThunk.fulfilled]:
+                                       (state, { payload }) => {
+                                         state.loading = false
+                                         state.tuits.push(payload)
+                                       },
+
+                                 },
+
+                                 reducers: { // OLD FROM LAST A7
                                    deleteTuit(state, action) {
                                      const index = state
                                          .findIndex(tuit =>

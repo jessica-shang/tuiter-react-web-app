@@ -1,6 +1,7 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { updateTuitLikes } from "./tuits-reducer";
+import {useDispatch} from "react-redux";
+//import { updateTuitLikes } from "./tuits-reducer";
+import {updateTuitThunk} from "../../services/tuits-thunks";
 
 const TuitStats = ({tuit}) => {
   const dispatch = useDispatch();
@@ -8,7 +9,7 @@ const TuitStats = ({tuit}) => {
     dispatch(updateTuitLikes(id));
   }
 
-  return(
+  return (
       <div className="d-flex justify-content-between">
 
         <div>
@@ -22,17 +23,26 @@ const TuitStats = ({tuit}) => {
         </div>
 
         <div>
-          <span onClick={() => updateTuitLikesHandler(tuit._id)}>
-            {tuit.liked && <i className="bi bi-heart-fill text-danger"></i>}
-            {!tuit.liked && <i className="bi bi-heart"></i>}
-            <span className="m-2">{tuit.likes}</span>
-          </span>
+          <i onClick={() => dispatch(updateTuitThunk({
+                                                       ...tuit,
+                                                       likes: tuit.likes + 1
+                                                     }))}
+             className="bi bi-heart-fill me-2 text-danger"/>
+          <span> {tuit.likes}</span>
+        </div>
+
+        <div className="col">
+          <i onClick={() => dispatch(updateTuitThunk({
+                                                       ...tuit,
+                                                       dislikes: tuit.dislikes + 1
+                                                     }))} className="bi bi-hand-thumbs-down-fill me-2"/>
+          <span> {tuit.dislikes}</span>
         </div>
 
         <div>
           <i className="bi bi-share"></i>
         </div>
       </div>
-      )
+  )
 }
 export default TuitStats
