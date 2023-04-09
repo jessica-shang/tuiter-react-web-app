@@ -9,9 +9,9 @@ const initialState = { // initial state has no tuits
 }
 
 const currentUser = {
-  "userName": "NASA",
-  "handle": "@nasa",
-  "image": "/images/nasa.png",
+  "userName": "WebDev",
+  "handle": "@webdev",
+  "image": "brain.jpg",
 };
 
 const templateTuit = {
@@ -19,9 +19,11 @@ const templateTuit = {
   "topic": "Space",
   "time": "2h",
   "liked": false,
+  "likes": 0,
+  "disliked": false,
+  "dislikes": 0,
   "replies": 0,
   "retuits": 0,
-  "likes": 0,
 }
 
 const tuitsSlice = createSlice({
